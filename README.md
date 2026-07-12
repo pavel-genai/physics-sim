@@ -1,7 +1,7 @@
 # PhysicsSim
 
-[![CI](https://github.com/ai-pavel/physics-sim/actions/workflows/ci.yml/badge.svg)](https://github.com/ai-pavel/physics-sim/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/ai-pavel/physics-sim/branch/main/graph/badge.svg)](https://codecov.io/gh/ai-pavel/physics-sim)
+[![CI](https://github.com/ai-pavel/pendulum/actions/workflows/ci.yml/badge.svg)](https://github.com/ai-pavel/pendulum/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/ai-pavel/pendulum/branch/main/graph/badge.svg)](https://codecov.io/gh/ai-pavel/pendulum)
 
 A 2D rigid body physics engine implemented in Swift.
 
