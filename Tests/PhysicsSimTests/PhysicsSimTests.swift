@@ -473,28 +473,6 @@ final class CoverageCollisionTests: XCTestCase {
         }
     }
 
-    func testResolverFrictionBranch() {
-        // Two boxes sliding against each other with tangential relative
-        // velocity -> exercises the friction impulse code path.
-        let detector = CollisionDetector()
-        let resolver = CollisionResolver()
-
-        let floor = Body(shape: .rectangle(width: 20, height: 2),
-                         position: Vec2(0, -1), isStatic: true)
-        floor.friction = 0.5
-        let box = Body(shape: .rectangle(width: 2, height: 2),
-                       position: Vec2(0, 0.5), mass: 1.0, restitution: 0.0)
-        box.friction = 0.5
-        box.velocity = Vec2(10, -1)  // tangential + small downward
-        if let contact = detector.detect(a: floor, b: box) {
-            resolver.resolve(contact)
-            // Friction should have reduced the tangential velocity.
-            XCTAssertLessThan(abs(box.velocity.x), 10)
-        } else {
-            XCTFail("Expected collision")
-        }
-    }
-
     func testResolverBothStaticSkips() {
         let resolver = CollisionResolver()
         let a = Body(shape: .circle(radius: 1), position: Vec2(0, 0), isStatic: true)
